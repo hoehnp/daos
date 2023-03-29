@@ -97,6 +97,8 @@ rdb_create(const char *path, const uuid_t uuid, uint64_t caller_term, size_t siz
 	if (rc != 0)
 		goto out_mc_hdl;
 
+	db->d_new = true;
+
 	*storagep = rdb_to_storage(db);
 out_mc_hdl:
 	if (rc != 0)

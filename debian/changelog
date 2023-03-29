@@ -1,3 +1,9 @@
+daos (2.3.107-7) unstable; urgency=medium
+  [ Li Wei ]
+  * Update raft to 0.10.0-1407.g48ce841
+
+ -- Li Wei <wei.g.li@intel.com>  Wed, 7 Jun 2023 09:55:00 +0900
+
 daos (2.3.107-6) unstable; urgency=medium
     [ Jeff Olivier ]
     * Add lmdb-devel and bio_ut for MD on SSD

@@ -91,6 +91,7 @@ struct rdb {
 	ABT_cond                d_commit_cv;    /* for waking active pool checkpoint */
 	daos_handle_t		d_mc;		/* metadata container */
 	uint64_t		d_nospc_ts;	/* last time commit observed low/no space (usec) */
+	bool			d_new;		/* for skipping lease recovery */
 
 	/* rdb_raft fields */
 	raft_server_t	       *d_raft;
