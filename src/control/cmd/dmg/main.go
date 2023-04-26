@@ -207,7 +207,7 @@ type cliOptions struct {
 type versionCmd struct{}
 
 func (cmd *versionCmd) Execute(_ []string) error {
-	fmt.Printf("dmg version %s\n", build.DaosVersion)
+	fmt.Println(build.String("dmg"))
 	os.Exit(0)
 	return nil
 }

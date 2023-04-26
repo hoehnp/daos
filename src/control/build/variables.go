@@ -1,11 +1,13 @@
 //
-// (C) Copyright 2020-2021 Intel Corporation.
+// (C) Copyright 2020-2023 Intel Corporation.
 //
 // SPDX-License-Identifier: BSD-2-Clause-Patent
 //
 
 // Package build provides an importable repository of variables set at build time.
 package build
+
+import "time"
 
 var (
 	// ConfigDir should be set via linker flag using the value of CONF_DIR.
@@ -26,4 +28,15 @@ var (
 
 	// DefaultSystemName defines the default DAOS system name.
 	DefaultSystemName = "daos_server"
+
+	// VCS is the version control system used to build the binary.
+	VCS = ""
+	// Revision is the VCS revision of the binary.
+	Revision = ""
+	// LastCommit is the time of the last commit.
+	LastCommit time.Time
+	// ReleaseBuild is true if the binary was built with the release tag.
+	ReleaseBuild bool
+	// DirtyBuild is true if the binary was built with uncommitted changes.
+	DirtyBuild bool
 )
