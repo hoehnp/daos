@@ -1,5 +1,6 @@
 """Common DAOS build functions"""
 import os
+import subprocess
 
 from SCons.Subst import Literal
 from SCons.Script import Dir
@@ -193,6 +194,10 @@ def _find_mpicc(env):
     """Find mpicc"""
     mpicc = WhereIs('mpicc')
     if not mpicc:
+        cmd = ['rpm', '-ql', 'openmpi-devel']
+        print("{0} output:\n{1}".format(' '.join(cmd),
+                                        subprocess.run(cmd, stdout=subprocess.PIPE,
+                                                       check=False).stdout.decode()))
         return False
 
     env.Replace(CC="mpicc")
