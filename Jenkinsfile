@@ -16,6 +16,7 @@
 // To use a test branch (i.e. PR) until it lands to master
 // I.e. for testing library changes
 //@Library(value='pipeline-lib@your_branch') _
+@Library(value='pipeline-lib@jemalmbe/daos-13490') _
 
 /* groovylint-disable-next-line CompileStatic */
 job_status_internal = [:]
@@ -287,16 +288,16 @@ pipeline {
                      defaultValue: true,
                      description: 'Run the Functional Hardware Large test stage')
         string(name: 'CI_UNIT_VM1_LABEL',
-               defaultValue: 'ci_vm1',
+               defaultValue: 'new_vm1',
                description: 'Label to use for 1 VM node unit and RPM tests')
         string(name: 'CI_UNIT_VM1_NVME_LABEL',
-               defaultValue: 'bwx_vm1',
+               defaultValue: 'new_vm1',
                description: 'Label to use for 1 VM node unit tests that need NVMe')
         string(name: 'FUNCTIONAL_VM_LABEL',
-               defaultValue: 'ci_vm9',
+               defaultValue: 'new_vm9',
                description: 'Label to use for 9 VM functional tests')
         string(name: 'CI_NLT_1_LABEL',
-               defaultValue: 'ci_nlt_1',
+               defaultValue: 'new_vm1',
                description: 'Label to use for NLT tests')
         string(name: 'FUNCTIONAL_HARDWARE_MEDIUM_LABEL',
                defaultValue: 'ci_nvme5',
