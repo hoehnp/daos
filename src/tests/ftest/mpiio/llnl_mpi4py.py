@@ -28,9 +28,15 @@ class LlnlMpi4py(MpiioTests):
         test_repo = self.params.get(name, '/run/test_repo/')
         for packages in site.getsitepackages():
             test_path = os.path.join(packages, test_repo)
+            print("Looking for {0}".format(test_path))
             if os.path.exists(test_path):
+                print("Found!")
                 return test_path
+            print("Not found!")
+
         self.fail('No test repo found in python site-packages')
+
+        return None
 
     def test_llnl(self):
         """Jira ID: DAOS-2231
