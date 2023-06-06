@@ -5,7 +5,6 @@
 
 """
 import os
-import site
 
 from apricot import TestWithServers
 
@@ -68,17 +67,6 @@ class MpiioTests(TestWithServers):
         job_managers = []
         for kwargs in kwargs_list:
             manager = get_job_manager(self)
-
-            # replace python lib path place holder with real python path
-            if "$python_lib" in kwargs['path']:
-                kwargs['path'] = None
-                for path in site.getsitepackages():
-                    test_path = path.replace('$python_lib', path)
-                    if os.path.isfile(os.path.join(test_path, test_name)):
-                        kwargs['path'] = test_path
-                        break
-                if not kwargs['path']:
-                    self.fail("Could not find {0} in repo {1}".format(test_name, test_repo))
 
             # fix up a relative test_repo specification
             if not kwargs["path"].startswith("/"):
