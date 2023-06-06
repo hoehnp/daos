@@ -976,7 +976,7 @@ pipeline {
                         job_step_update(
                             functionalTest(
                                 inst_repos: daosRepos(),
-                                inst_rpms: functionalPackages(1, next_version, 'client-tests-openmpi'),
+                                inst_rpms: functionalPackages(1, next_version, 'tests-internal'),
                                 test_function: 'runTestFunctionalV2'))
                     }
                     post {
@@ -998,7 +998,7 @@ pipeline {
                         job_step_update(
                             functionalTest(
                                 inst_repos: daosRepos(),
-                                    inst_rpms: functionalPackages(1, next_version, 'client-tests-openmpi'),
+                                    inst_rpms: functionalPackages(1, next_version, 'tests-internal'),
                                     test_function: 'runTestFunctionalV2'))
                     }
                     post {
@@ -1020,8 +1020,8 @@ pipeline {
                         job_step_update(
                             functionalTest(
                                 inst_repos: daosRepos(),
-                                inst_rpms: functionalPackages(1, next_version, 'client-tests-openmpi'),
-                                test_function: 'runTestFunctionalV2'))
+                                    inst_rpms: functionalPackages(1, next_version, 'tests-internal'),
+                                    test_function: 'runTestFunctionalV2'))
                     }
                     post {
                         always {
@@ -1042,7 +1042,7 @@ pipeline {
                         job_step_update(
                             functionalTest(
                                 inst_repos: daosRepos(),
-                                inst_rpms: functionalPackages(1, next_version, 'client-tests-openmpi'),
+                                inst_rpms: functionalPackages(1, next_version, 'tests-internal'),
                                 test_function: 'runTestFunctionalV2'))
                     }
                     post {
@@ -1137,7 +1137,7 @@ pipeline {
                 job_step_update(
                     storagePrepTest(
                         inst_repos: daosRepos(),
-                        inst_rpms: functionalPackages(1, next_version, 'client-tests-openmpi')))
+                        inst_rpms: functionalPackages(1, next_version, 'tests-internal')))
             }
             post {
                 cleanup {
@@ -1164,7 +1164,7 @@ pipeline {
                         job_step_update(
                             functionalTest(
                                 inst_repos: daosRepos(),
-                                inst_rpms: functionalPackages(1, next_version, 'client-tests-openmpi'),
+                                inst_rpms: functionalPackages(1, next_version, 'tests-internal'),
                                 test_function: 'runTestFunctionalV2'))
                     }
                     post {
@@ -1187,7 +1187,7 @@ pipeline {
                         job_step_update(
                             functionalTest(
                                 inst_repos: daosRepos(),
-                                inst_rpms: functionalPackages(1, next_version, 'client-tests-openmpi'),
+                                inst_rpms: functionalPackages(1, next_version, 'tests-internal'),
                                 test_function: 'runTestFunctionalV2'))
                     }
                     post {
@@ -1210,7 +1210,7 @@ pipeline {
                         job_step_update(
                             functionalTest(
                                 inst_repos: daosRepos(),
-                                inst_rpms: functionalPackages(1, next_version, 'client-tests-openmpi'),
+                                inst_rpms: functionalPackages(1, next_version, 'tests-internal'),
                                 test_function: 'runTestFunctionalV2'))
                     }
                     post {
@@ -1233,7 +1233,7 @@ pipeline {
                         job_step_update(
                             functionalTest(
                                 inst_repos: daosRepos(),
-                                inst_rpms: functionalPackages(1, next_version, 'client-tests-openmpi'),
+                                inst_rpms: functionalPackages(1, next_version, 'tests-internal'),
                                 test_function: 'runTestFunctionalV2'))
                     }
                     post {
