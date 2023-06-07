@@ -74,8 +74,7 @@ rdb_create(const char *path, const uuid_t uuid, uint64_t caller_term, size_t siz
 
 	/* Initialize the layout version. */
 	d_iov_set(&value, &version, sizeof(version));
-	rc = rdb_mc_update(mc, RDB_MC_ATTRS, 1 /* n */, &rdb_mc_version,
-			   &value);
+	rc = rdb_mc_update(mc, RDB_MC_ATTRS, 1 /* n */, &rdb_mc_version, &value, NULL /* vtx */);
 	if (rc != 0)
 		goto out_mc_hdl;
 
@@ -89,7 +88,7 @@ rdb_create(const char *path, const uuid_t uuid, uint64_t caller_term, size_t siz
 	 * rdb_start() checks this attribute when starting a DB.
 	 */
 	d_iov_set(&value, (void *)uuid, sizeof(uuid_t));
-	rc = rdb_mc_update(mc, RDB_MC_ATTRS, 1 /* n */, &rdb_mc_uuid, &value);
+	rc = rdb_mc_update(mc, RDB_MC_ATTRS, 1 /* n */, &rdb_mc_uuid, &value, NULL /* vtx */);
 	if (rc != 0)
 		goto out_mc_hdl;
 

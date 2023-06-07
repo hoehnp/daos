@@ -1438,6 +1438,25 @@ struct scrub_ctx {
 	    sc_first_pass_done                  : 1; /* Is this the first pass of the scrubber */
 };
 
+static inline int
+vos_local_tx_begin(daos_handle_t poh, struct dtx_handle **dth)
+{
+	struct dtx_handle *h;
+
+	D_ALLOC_PTR(h);
+	if (h == NULL)
+		return -DER_NOMEM;
+	*dth = h;
+	return 0;
+}
+
+static inline int
+vos_local_tx_end(struct dtx_handle *dth, int err)
+{
+	D_FREE(dth);
+	return 0;
+}
+
 /*
  * It is expected that the pool uuid/handle and any functional dependencies are
  * set in the scrubbing context. The container/object info should not be set.
