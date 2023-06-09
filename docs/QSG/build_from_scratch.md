@@ -62,7 +62,7 @@ For openSUSE, the following command should be executed as root or via sudo:
 $ ./utils/scripts/install-leap15.sh
 ```
 
-### Unbuntu
+### Ubuntu
 
 As for Ubuntu, please run the following script as the root user or via sudo:
 
